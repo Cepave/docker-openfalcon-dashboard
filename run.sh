@@ -13,8 +13,7 @@ function check_service(){
 }
 
 tar -zxf $PACKDIR/$PACKFILE -C $WORKDIR
-cp $CONFIGDIR/$CONFIGPYTHON $WORKDIR/rrd/$CONFIGFILE
-cp $CONFIGDIR/$CONFIGFILE $WORKDIR
+cp $CONFIGDIR/$CONFIGFILE $WORKDIR/rrd/$CONFIGFILE
 virtualenv $WORKDIR/env
 pip install -r /home/dashboard/pip_requirements.txt
 $WORKDIR/control restart

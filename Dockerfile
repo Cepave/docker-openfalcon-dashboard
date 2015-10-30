@@ -2,7 +2,7 @@ FROM ubuntu:14.04.2
 
 MAINTAINER minimum@cepave.com
 
-ENV WORKDIR=/home/dashboard PACKDIR=/package PACKFILE=falcon-dashboard.tar.gz CONFIGDIR=/config CONFIGPYTHON=config.py CONFIGFILE=cfg.json
+ENV WORKDIR=/home/dashboard PACKDIR=/package PACKFILE=falcon-dashboard.tar.gz CONFIGDIR=/config CONFIGFILE=config.py
 
 # Volume
 VOLUME $CONFIGDIR $WORKDIR $PACKDIR
@@ -11,7 +11,7 @@ VOLUME $CONFIGDIR $WORKDIR $PACKDIR
 RUN \
   apt-get update && \
   apt-get install -y python-virtualenv python-dev python-mysqldb
-COPY $CONFIGFILE $CONFIGPYTHON $CONFIGDIR/
+COPY $CONFIGFILE $CONFIGDIR/
 COPY $PACKFILE $PACKDIR/
 
 WORKDIR /root
