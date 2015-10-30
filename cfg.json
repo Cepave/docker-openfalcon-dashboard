@@ -1,0 +1,11 @@
+{
+    "database": {
+        "host": "127.0.0.1",
+        "port": "3306",
+        "account": "root",
+        "password": "",
+        "db": "uic",
+        "table": "session"
+    },
+    "redirectUrl": "http://127.0.0.1:1234/auth/login?callback=http%3A//127.0.0.1%3A8081/"
+}
