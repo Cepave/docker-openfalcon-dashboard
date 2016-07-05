@@ -13,9 +13,6 @@ function check_service(){
   fi
 }
 
-virtualenv $WORKDIR/env
-pip install -r /home/dashboard/pip_requirements.txt
-
 $WORKDIR/control restart
 while sleep $WAIT_SERVICE_READY; do
   check_service
