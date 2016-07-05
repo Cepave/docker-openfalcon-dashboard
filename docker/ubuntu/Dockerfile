@@ -12,7 +12,7 @@ RUN \
 ADD $DOCKERDIR/$PACKFILE $WORKDIR
 COPY src/$CONFIGFILE $CONFIGDIR/
 RUN \
-  ln -sf $CONFIGDIR/$CONFIGFILE $WORKDIR/$CONFIGFILE && \
+  ln -sf $CONFIGDIR/$CONFIGFILE $WORKDIR/rrd/$CONFIGFILE && \
   virtualenv $WORKDIR/env && \
   pip install -r $WORKDIR/pip_requirements.txt
 
