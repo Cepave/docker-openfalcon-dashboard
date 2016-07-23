@@ -2,7 +2,12 @@ FROM alpine:3.4
 
 MAINTAINER cheminlin@cepave.com
 
-ENV WORKDIR=/home/dashboard DOCKERDIR=docker/alpine PACKFILE=falcon-dashboard.tar.gz CONFIGDIR=/config CONFIGFILE=config.py
+ARG DOCKERDIR=docker/alpine
+ARG PACKFILE=falcon-dashboard.tar.gz
+ARG CONFIGDIR=/config
+ARG CONFIGFILE=config.py
+
+ENV WORKDIR=/home/dashboard
 
 # Set timezone, bash, config dir
 # Set alias in the case of user want to execute control in their terminal

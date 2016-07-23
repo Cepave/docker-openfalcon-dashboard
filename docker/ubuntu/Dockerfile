@@ -2,7 +2,12 @@ FROM ubuntu:14.04.2
 
 MAINTAINER minimum@cepave.com
 
-ENV WORKDIR=/home/dashboard DOCKERDIR=docker/ubuntu PACKFILE=falcon-dashboard.tar.gz CONFIGDIR=/config CONFIGFILE=config.py
+ARG DOCKERDIR=docker/ubuntu
+ARG PACKFILE=falcon-dashboard.tar.gz
+ARG CONFIGDIR=/config
+ARG CONFIGFILE=config.py
+
+ENV WORKDIR=/home/dashboard
 
 # Install Open-Falcon Dashboard Component
 RUN \
