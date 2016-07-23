@@ -15,7 +15,7 @@ RUN \
   apt-get install -y python-virtualenv python-dev python-mysqldb && \
   mkdir -p $WORKDIR $CONFIGDIR
 ADD $DOCKERDIR/$PACKFILE $WORKDIR
-COPY src/$CONFIGFILE $CONFIGDIR/
+COPY src/config.py $CONFIGDIR/$CONFIGFILE
 RUN \
   ln -sf $CONFIGDIR/$CONFIGFILE $WORKDIR/rrd/$CONFIGFILE && \
   virtualenv $WORKDIR/env && \

@@ -21,7 +21,7 @@ RUN \
 # Install Open-Falcon Dashboard Component
 RUN apk add --no-cache python-dev py-virtualenv py-mysqldb
 ADD $DOCKERDIR/$PACKFILE $WORKDIR
-COPY src/$CONFIGFILE $CONFIGDIR/
+COPY src/config.py $CONFIGDIR/$CONFIGFILE
 RUN \
   ln -sf $CONFIGDIR/$CONFIGFILE $WORKDIR/rrd/$CONFIGFILE \
   && virtualenv $WORKDIR/env \
