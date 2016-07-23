@@ -5,8 +5,6 @@ MAINTAINER minimum@cepave.com
 ARG DOCKERDIR=docker/ubuntu
 ARG PACKFILE=falcon-dashboard.tar.gz
 ARG CONFIGDIR=/config
-ARG CONFIGFILE=config.py
-
 ENV WORKDIR=/home/dashboard
 
 # Install Open-Falcon Dashboard Component
@@ -15,6 +13,7 @@ RUN \
   apt-get install -y python-virtualenv python-dev python-mysqldb && \
   mkdir -p $WORKDIR $CONFIGDIR
 ADD $DOCKERDIR/$PACKFILE $WORKDIR
+ARG CONFIGFILE=config.py
 COPY src/config.py $CONFIGDIR/$CONFIGFILE
 RUN \
   ln -sf $CONFIGDIR/$CONFIGFILE $WORKDIR/rrd/config.py && \
