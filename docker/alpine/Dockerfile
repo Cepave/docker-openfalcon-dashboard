@@ -23,7 +23,7 @@ RUN apk add --no-cache python-dev py-virtualenv py-mysqldb
 ADD $DOCKERDIR/$PACKFILE $WORKDIR
 COPY src/config.py $CONFIGDIR/$CONFIGFILE
 RUN \
-  ln -sf $CONFIGDIR/$CONFIGFILE $WORKDIR/rrd/$CONFIGFILE \
+  ln -sf $CONFIGDIR/$CONFIGFILE $WORKDIR/rrd/config.py \
   && virtualenv $WORKDIR/env \
   && pip install -r $WORKDIR/pip_requirements.txt
 
