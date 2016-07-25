@@ -5,7 +5,7 @@ MAINTAINER minimum@cepave.com
 ARG DOCKERDIR=docker/ubuntu
 ARG PACKFILE=falcon-dashboard.tar.gz
 ARG CONFIGDIR=/config
-ENV WORKDIR=/home/dashboard
+ENV WORKDIR=/home/dashboard TZ=Asia/Taipei
 
 # Install Open-Falcon Dashboard Component
 RUN \
