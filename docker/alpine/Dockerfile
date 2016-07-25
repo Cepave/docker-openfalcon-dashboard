@@ -5,8 +5,6 @@ MAINTAINER cheminlin@cepave.com
 ARG DOCKERDIR=docker/alpine
 ARG PACKFILE=falcon-dashboard.tar.gz
 ARG CONFIGDIR=/config
-ARG CONFIGFILE=config.py
-
 ENV WORKDIR=/home/dashboard
 
 # Set timezone, bash, config dir
@@ -21,6 +19,7 @@ RUN \
 # Install Open-Falcon Dashboard Component
 RUN apk add --no-cache python-dev py-virtualenv py-mysqldb
 ADD $DOCKERDIR/$PACKFILE $WORKDIR
+ARG CONFIGFILE=config.py
 COPY src/config.py $CONFIGDIR/$CONFIGFILE
 RUN \
   ln -sf $CONFIGDIR/$CONFIGFILE $WORKDIR/rrd/config.py \
