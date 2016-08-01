@@ -22,11 +22,11 @@ $ docker run -d --name dashboard -p 8081:8081 openfalcon-dashboard
 
 + Self-defined configuration
 
-    Replace file **config.py** in the volume */config*.  
-    For more detail about **config.py**, see [Dashboard](http://book.open-falcon.com/zh/install/dashboard.html).
+    Replace file **config.py** and **gunicorn.conf** in the volume */config*.  
+    For more details about **config.py** and **gunicorn.conf**, see [Dashboard](http://book.open-falcon.com/zh/install/dashboard.html).
 
-For example, **config.py** in /tmp/config,
+For example, **config.py** and **gunicorn.conf** in /tmp/config,
 
 ```
-$ docker run -d --name dashboard -v /tmp/config/config.py:/config/config.py -p 8081:8081 openfalcon-dashboard
+$ docker run -d --name dashboard -v /tmp/config/config.py:/config/config.py -v /tmp/config/gunicorn.conf:/config/gunicorn.conf -p 8081:8081 openfalcon-dashboard
 ```
