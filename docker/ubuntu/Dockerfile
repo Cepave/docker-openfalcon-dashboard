@@ -31,5 +31,5 @@ EXPOSE 8081
 # Start
 ENTRYPOINT ["gunicorn"]
 CMD ["-c", "gunicorn.conf", "wsgi:app"]
-HEALTHCHECK --interval=10s --timeout=2s \
+HEALTHCHECK --interval=60s --timeout=2s \
   CMD curl -sSf http://localhost:8081/api/health || exit 1
